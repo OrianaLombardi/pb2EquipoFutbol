@@ -200,5 +200,31 @@ public class TestFutbol {
 		
 	}
 	
+	@Test
+	public void queNOSePuedaCalcularElValorDelEquipoDevolviendoUnDouble() {
+		//Preparacion
+		//Datos de entrada
+		String nombre="Oriana";
+		Integer numero=6,edad=26;
+		Double precio=26000.00;
+		String nombre1="Lino";
+		Integer numero1=6,edad1=40;
+		Double precio1=29000.0;
+		Jugador jugador=new Jugador(numero,nombre,edad,precio);
+		Jugador jugador1=new Jugador(numero1,nombre1,edad1,precio1);
+		EquipoDeFutbol equipo=new EquipoDeFutbol("Velez");
+		
+		//Ejecucion
+		equipo.agregarJugador(jugador);
+		equipo.agregarJugador(jugador1);
+		double valorEquipo=equipo.calcularElValorDelEquipo();
+		
+		
+		//Validacion
+		assertEquals(precio,valorEquipo,0.00);
+		assertEquals(precio1,valorEquipo,0.00);
+		
+	}
+	
 	
 }
